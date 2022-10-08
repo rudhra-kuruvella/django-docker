@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  backend:
+    image: 'backend'
+    build: .
+    container_name: 'backend'
+    restart: unless-stopped
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '8000:8000'
